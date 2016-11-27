@@ -6,12 +6,6 @@
 const char WiFiSSID[] = "";
 const char WiFiPSK[] = "";
 
-//const char WiFiSSID[] = "iPhone (2)";
-//const char WiFiPSK[] = "bxmwfkg1twmb1";
-
-//const char WiFiSSID[] = "**virus";
-//const char WiFiPSK[] = "goodgirL0";
-
 const int LED_PIN = 5; // Thing's onboard, green LED
 const char phantHost[] = "data.sparkfun.com";
 const unsigned long postRate = 4000;
@@ -52,8 +46,8 @@ void initHardware() {
 }
 
 String getLatestFromStream() {
-  char streamPublicKey[] = "XGNZrmp7pKCZEKnNwlal";
-  char streamPrivateKey[] = "1JAzk1MaM5tPlMpedZ8Z";
+  char streamPublicKey[] = "";
+  char streamPrivateKey[] = "";
 
   Phant phant(phantHost, streamPublicKey, streamPrivateKey);
   String response = makePhantRequest(phantGetFixed(phantHost, streamPublicKey));
@@ -62,8 +56,8 @@ String getLatestFromStream() {
 }
 
 void postToLog(String contents) {
-  char logPublicKey[] = "QGXZgMOq7qI0lbEW9p2E";
-  char logPrivateKey[] = "JqAYN1Mk9kCwaMvbN5qv";
+  char logPublicKey[] = "";
+  char logPrivateKey[] = "";
 
   Phant phant(phantHost, logPublicKey, logPrivateKey);
   phant.add("status", contents);
